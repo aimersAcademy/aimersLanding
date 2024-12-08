@@ -113,17 +113,18 @@ function ClientTestimonials() {
             </motion.div>
 
             <h2
-              className="font-bold text-xl "
+              className="font-bold text-xl"
               style={{ color: theme.colors.textPrimary }}
             >
-              "{testimonial.title}"
+              &quot;{testimonial.title}&quot;
             </h2>
             <p
-              className="text-lg  italic mb-4"
+              className="text-lg italic mb-4"
               style={{ color: theme.colors.textPrimary }}
             >
-              "{testimonial.feedback}"
+              &quot;{testimonial.feedback}&quot;
             </p>
+
             <h3
               className="text-xl font-semibold "
               style={{ color: theme.colors.textPrimary }}
