@@ -21,7 +21,7 @@ const socials = [
   },
   {
     icon: <FaTiktok />,
-    href: "https://www.instagram.com/hashtagaimers/?hl=en",
+    href: "https://www.tiktok.com/@hashtagaimers?_t=8s35QrBRxah&_r=1",
   },
   { icon: <FaLinkedin />, href: "https://www.linkedin.com/company/105291996" },
   {
@@ -52,7 +52,9 @@ const ClientFooter = () => {
       animate="visible"
       variants={footerVariants}
     >
+      {/* Main Content */}
       <div className="grid grid-cols-1 gap-12 md:grid-cols-3 md:gap-8">
+        {/* Logo and Tagline */}
         <motion.div
           className="flex flex-col text-center md:items-start"
           variants={itemVariants}
@@ -66,14 +68,14 @@ const ClientFooter = () => {
         </motion.div>
 
         {/* Navigation Links */}
-        <div>
-          <h4 className="text-xl md:text-start text-center font-semibold mb-4 text-blue-400">
+        <motion.div
+          className="flex flex-col items-center md:items-start"
+          variants={itemVariants}
+        >
+          <h4 className="text-xl font-semibold mb-4 text-blue-400">
             Quick Links
           </h4>
-          <motion.div
-            className="flex md:flex-col flex-row items-center justify-evenly md:items-start space-y-2"
-            variants={itemVariants}
-          >
+          <div className="flex flex-col space-y-2">
             {links.map((link, index) => (
               <a
                 key={index}
@@ -83,12 +85,12 @@ const ClientFooter = () => {
                 {link.title}
               </a>
             ))}
-          </motion.div>
-        </div>
+          </div>
+        </motion.div>
 
         {/* Contact Information */}
         <motion.div
-          className="flex flex-col items-start"
+          className="flex flex-col items-center md:items-start"
           variants={itemVariants}
         >
           <h4 className="text-xl font-semibold mb-4 text-blue-400">
@@ -116,7 +118,7 @@ const ClientFooter = () => {
         </motion.div>
       </div>
 
-      {/* Divider */}
+      {/* Footer Bottom */}
       <motion.div
         className="mt-12 border-t border-gray-700 pt-6 flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0"
         variants={itemVariants}

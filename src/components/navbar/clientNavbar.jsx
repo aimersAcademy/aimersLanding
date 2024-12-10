@@ -2,8 +2,8 @@
 import { motion } from "motion/react";
 import { useTheme } from "@/context/ThemeProvider";
 import Image from "next/image";
-import { useEffect, useState } from "react";
-import { FaCartPlus, FaHome, FaMailBulk, FaStore } from "react-icons/fa";
+import { useState } from "react";
+
 import { CiLight, CiDark } from "react-icons/ci";
 import { listItemVariants, listVariants } from "@/utils/Variants";
 

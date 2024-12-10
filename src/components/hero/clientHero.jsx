@@ -8,11 +8,10 @@ import { itemVariants, letterVariants } from "@/utils/Variants";
 const ClientHero = () => {
   const { theme } = useTheme();
   return (
-    <div className="flex flex-col md:flex-row items-center md:justify-between gap-8 md:gap-16 p-8 ">
-      <div className="md:w-1/2 text-center flex flex-col items-center justify-center md:text-left space-y-6">
-        {/* Animated Heading */}
+    <div className="flex flex-col md:flex-row items-center md:justify-between gap-8 md:gap-16 px-6 md:px-12 lg:px-24 py-8">
+      <div className="w-full md:w-1/2 flex flex-col items-center md:items-start text-center md:text-left space-y-6">
         <motion.h1
-          className="text-4xl md:text-6xl font-extrabold leading-tight"
+          className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight"
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
@@ -38,9 +37,8 @@ const ClientHero = () => {
           ))}
         </motion.h1>
 
-        {/* Subheading */}
         <motion.h2
-          className="text-2xl md:text-4xl font-semibold tracking-tight text-center md:text-left"
+          className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold tracking-tight"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut", delay: 0.5 }}
@@ -49,23 +47,21 @@ const ClientHero = () => {
           Where aspirations take flight!
         </motion.h2>
 
-        {/* Description */}
         <motion.p
-          className="mt-4 text-lg text-center md:text-left max-w-lg"
+          className="mt-4 text-base sm:text-lg lg:text-xl max-w-lg"
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut", delay: 0.7 }}
           style={{ color: theme.colors.textSecondary }}
         >
           At Aimers Academy, we believe education is the foundation of a
-          brighter tomorrow. So our mission is to provide quality learning
+          brighter tomorrow. Our mission is to provide quality learning
           experiences, foster critical thinking, and nurture creativity in
           students of all ages.
         </motion.p>
 
-        {/* Call-to-Action Buttons */}
         <motion.div
-          className="mt-6 flex justify-center md:justify-start gap-4"
+          className="mt-6 flex flex-col sm:flex-row justify-center md:justify-start gap-4"
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut", delay: 0.9 }}
@@ -74,7 +70,7 @@ const ClientHero = () => {
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
             transition={{ duration: 0.2 }}
-            className="px-8 py-3 rounded-md shadow-lg font-medium text-lg transition-all"
+            className="px-6 py-3 rounded-md shadow-lg font-medium text-sm sm:text-base transition-all"
             href={"#courses"}
             style={{
               backgroundColor: theme.colors.primary,
@@ -88,7 +84,7 @@ const ClientHero = () => {
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
             transition={{ duration: 0.2 }}
-            className="px-8 py-3 rounded-md shadow-lg font-medium text-lg transition-all"
+            className="px-6 py-3 rounded-md shadow-lg font-medium text-sm sm:text-base transition-all"
             style={{
               backgroundColor: theme.colors.secondary,
               color: theme.name === "dark" ? "#000" : "#FFF",
@@ -101,7 +97,7 @@ const ClientHero = () => {
         </motion.div>
       </div>
 
-      <div className="md:w-1/2 grid grid-cols-2 gap-4">
+      <div className="w-full md:w-1/2 grid grid-cols-2 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-4">
         {[
           { src: "/hero-1.jpg", alt: "Grid Image 1" },
           { src: "/hero-2.jpg", alt: "Grid Image 2" },
@@ -110,7 +106,7 @@ const ClientHero = () => {
         ].map((image, index) => (
           <motion.div
             key={index}
-            className="h-32 md:h-60 rounded-lg overflow-hidden relative group shadow-lg"
+            className="h-28 sm:h-36 md:h-44 lg:h-60 rounded-lg overflow-hidden relative group shadow-lg"
             variants={itemVariants}
             initial="hidden"
             whileInView="visible"
@@ -131,4 +127,5 @@ const ClientHero = () => {
     </div>
   );
 };
+
 export default ClientHero;

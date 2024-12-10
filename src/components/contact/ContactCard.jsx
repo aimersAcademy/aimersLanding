@@ -1,61 +1,66 @@
-import { FaFacebook, FaLocationDot } from "react-icons/fa6";
-import { FaPhoneAlt } from "react-icons/fa";
+import { FaFacebook, FaPhoneAlt } from "react-icons/fa";
 import { IoMail } from "react-icons/io5";
-import { FaCopy } from "react-icons/fa";
 import Link from "next/link";
-
 import { useTheme } from "@/context/ThemeProvider";
 
-const Contactcard = () => {
+const ContactCard = () => {
   const { theme } = useTheme();
 
   const contactDetails = [
     {
       name: "Facebook",
-      icon: <FaFacebook className="hover:animate-pulse" />,
+      icon: <FaFacebook className="text-lg" />,
       link: "https://www.facebook.com/profile.php?id=61569188792086",
     },
     {
       name: "login.aimers@gmail.com",
-      icon: <IoMail className="hover:animate-pulse" />,
+      icon: <IoMail className="text-lg" />,
       link: "mailto:login.aimers@gmail.com",
     },
     {
-      name: "9810689165",
-      icon: <FaPhoneAlt className="hover:animate-pulse" />,
+      name: "9810689165 , 9843521965",
+      icon: <FaPhoneAlt className="text-lg" />,
       link: "tel:9810689165",
     },
   ];
 
   return (
     <div
-      className="  flex  font-bold flex-col gap-5 rounded-md p-2 justify-center items-center hover:scale-105 transition-all ease-linear"
+      className="flex flex-col gap-4 rounded-lg p-6 w-full max-w-md shadow-md transition-transform transform hover:scale-105"
       style={{
         backgroundColor: theme.colors.surface,
         color: theme.colors.textPrimary,
       }}
     >
       {contactDetails.map((detail, index) => (
-        <div key={index} className="w-full flex flex-col gap-5">
-          <div className="flex w-full items-center justify-between ">
-            <div className="w-full ">
-              <Link
-                href={detail.link}
-                className="flex items-center justify-around"
-              >
-                {detail.icon}
-                <h1 className="font-semi-bold">{detail.name}</h1>
-              </Link>
-            </div>
-          </div>
+        <Link
+          key={index}
+          href={detail.link}
+          className="flex items-center gap-4 py-3 hover:bg-opacity-5 hover:shadow-md transition-all rounded-lg"
+          style={{ color: theme.colors.textPrimary }}
+        >
+          {/* Icon aligned to the left */}
           <div
-            className="w-full h-[1px] "
-            style={{ backgroundColor: theme.colors.textPrimary }}
-          ></div>
-        </div>
+            className="flex justify-center items-center w-12 h-12 rounded-full"
+            style={{
+              backgroundColor: theme.colors.background,
+              color: theme.colors.textPrimary,
+            }}
+          >
+            {detail.icon}
+          </div>
+
+          {/* Contact detail text */}
+          <div className="flex flex-col">
+            <h1 className="text-lg font-semibold">{detail.name}</h1>
+            <span className="text-sm font-light">
+              {detail.name.includes("@") ? "Email us" : "Reach us"}
+            </span>
+          </div>
+        </Link>
       ))}
     </div>
   );
 };
 
-export default Contactcard;
+export default ContactCard;
